@@ -1,3 +1,6 @@
+server:
+  port: 8088
+
 spring:
   datasource:
     url: jdbc:h2:tcp://localhost/~/jpashop
@@ -12,6 +15,9 @@ spring:
       hibernate:
         #        show_sql: true
         format_sql: true
+        default_batch_fetch_size: 100 # 미리 땡겨올 데이터개수
+        #    open-in-view: false # 커넥션 풀을 바로 끊게해줌(영속성 컨텍스트가 @Transcational까지만 유지되게 함)
+
 
 logging.level:
   org.hibernate.SQL: debug
