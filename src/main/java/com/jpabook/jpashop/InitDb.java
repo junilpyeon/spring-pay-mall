@@ -1,7 +1,7 @@
 package com.jpabook.jpashop;
 
-import jpabook.jpashop.domain.*;
-import jpabook.jpashop.domain.item.Book;
+import com.jpabook.jpashop.domain.*;
+import com.jpabook.jpashop.domain.item.Book;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

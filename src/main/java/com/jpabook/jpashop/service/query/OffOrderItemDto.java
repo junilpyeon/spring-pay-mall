@@ -1,6 +1,6 @@
 package com.jpabook.jpashop.service.query;
 
-import jpabook.jpashop.domain.OrderItem;
+import com.jpabook.jpashop.domain.OrderItem;
 import lombok.Getter;
 
 @Getter

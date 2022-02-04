@@ -1,8 +1,8 @@
 package com.jpabook.jpashop.service.query;
 
-import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderStatus;
+import com.jpabook.jpashop.domain.Address;
+import com.jpabook.jpashop.domain.Order;
+import com.jpabook.jpashop.domain.OrderStatus;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

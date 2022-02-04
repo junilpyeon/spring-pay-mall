@@ -1,7 +1,7 @@
 package com.jpabook.jpashop.service.query;
 
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.repository.OrderRepository;
+import com.jpabook.jpashop.domain.Order;
+import com.jpabook.jpashop.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

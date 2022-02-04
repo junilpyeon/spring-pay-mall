@@ -1,8 +1,8 @@
 package com.jpabook.jpashop.controller;
 
-import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.service.MemberService;
+import com.jpabook.jpashop.domain.Address;
+import com.jpabook.jpashop.domain.Member;
+import com.jpabook.jpashop.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

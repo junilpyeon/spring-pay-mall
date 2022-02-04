@@ -1,8 +1,8 @@
 package com.jpabook.jpashop.repository.order.query;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jpabook.jpashop.domain.Address;
-import jpabook.jpashop.domain.OrderStatus;
+import com.jpabook.jpashop.domain.Address;
+import com.jpabook.jpashop.domain.OrderStatus;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
