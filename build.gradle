@@ -1,6 +1,13 @@
+buildscript {
+	ext {
+		queryDslVersion = "5.0.0"
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.6.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 	id 'java'
 }
 
@@ -32,19 +39,52 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	// querydsl 추가
+	//implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
+	//implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
+
 	// Querydsl
-	implementation 'com.querydsl:querydsl-jpa'
+	implementation group: 'com.querydsl', name: 'querydsl-jpa', version: queryDslVersion
+	implementation group: 'com.querydsl', name: 'querydsl-apt', version: queryDslVersion
+	implementation group: 'com.querydsl', name: 'querydsl-core', version: queryDslVersion
 
-    // Querydsl JPAAnnotationProcessor 사용 지정
-	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
-	// java.lang.NoClassDefFoundError(javax.annotation.Entity) 발생 대응
-	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
-	// java.lang.NoClassDefFoundError(javax.annotation.Generated) 발생 대응
-	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
-
+	annotationProcessor group: 'com.querydsl', name: 'querydsl-apt', version: queryDslVersion
+	annotationProcessor group: 'com.querydsl', name: 'querydsl-apt', version: queryDslVersion, classifier: 'jpa'
+	annotationProcessor("jakarta.persistence:jakarta.persistence-api")
+	annotationProcessor("jakarta.annotation:jakarta.annotation-api")
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// querydsl 추가 시작
+def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl {
+	jpa = true
+	querydslSourcesDir = querydslDir
+}
+
+sourceSets {
+	main.java.srcDir querydslDir
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+	querydsl.extendsFrom compileClasspath
+}
+
+compileQuerydsl {
+	options.annotationProcessorPath = configurations.querydsl
+}
+
+compileQuerydsl.doFirst {
+	if(file(querydslDir).exists() )
+		delete(file(querydslDir))
+}
+// querydsl 추가 끝
+
+
