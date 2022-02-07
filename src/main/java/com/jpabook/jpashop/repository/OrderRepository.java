@@ -14,8 +14,8 @@ import javax.persistence.criteria.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.jpabook.jpashop.domain.QMember.*;
-import static com.jpabook.jpashop.domain.QOrder.*;
+//import static com.jpabook.jpashop.domain.QMember.*;
+//import static com.jpabook.jpashop.domain.QOrder.*;
 
 @Repository
 public class OrderRepository {
@@ -105,7 +105,7 @@ public class OrderRepository {
     }
 
     // 자바 코드라서 만들어진 함수를 재사용할수가 있다.
-    public List<Order> findAll2(OrderSearch orderSearch) {
+    /*public List<Order> findAll2(OrderSearch orderSearch) {
         return query
                 .select(order)
                 .from(order)
@@ -122,8 +122,8 @@ public class OrderRepository {
                 .where(statusEq(orderSearch.getOrderStatus()), nameLike(orderSearch.getMemberName())) //동적쿼리
                 .limit(1000)
                 .fetch();
-    }
-
+    }*/
+/*
     private BooleanExpression nameLike(String memberName) {
         if (!StringUtils.hasText(memberName)) {
             return null;
@@ -136,7 +136,7 @@ public class OrderRepository {
             return null;
         }
         return order.status.eq(statusCond);
-    }
+    }*/
 
     public List<Order> findAllWithMemberDelivery() {
         return em.createQuery(
@@ -148,11 +148,11 @@ public class OrderRepository {
 
     public List<Order> findAllwithItem() {
         return em.createQuery(
-                "select distinct o from Order o" +
-                        " join fetch o.member m" +
-                        " join fetch o.delivery d" +
-                        " join fetch o.orderItems oi" + // Order입장에선 1:N 페치조인
-                        " join fetch oi.item i", Order.class)
+                        "select distinct o from Order o" +
+                                " join fetch o.member m" +
+                                " join fetch o.delivery d" +
+                                " join fetch o.orderItems oi" + // Order입장에선 1:N 페치조인
+                                " join fetch oi.item i", Order.class)
                 .setFirstResult(1)
                 .setMaxResults(100)
                 .getResultList();
@@ -160,7 +160,7 @@ public class OrderRepository {
 
     public List<Order> findAllWithMemberDeliveryPage(int offset, int limit) {
         return em.createQuery(
-                "select o from Order o", Order.class)
+                        "select o from Order o", Order.class)
                 .setFirstResult(offset)
                 .setMaxResults(limit)
                 .getResultList();

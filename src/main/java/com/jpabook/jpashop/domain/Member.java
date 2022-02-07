@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,13 +17,17 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
+    @NotEmpty
     private String name;
 
     @Embedded
     private Address address;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member") // 하나의 회원(One)이 여러 개의 주문(Many)을 함
     private List<Order> orders = new ArrayList<>();
 
+//    public Member() { // Null포인터익셉션이 발생할 수도 있음
+//        orders = new ArrayList<>();
+//    }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MemberRepositoryOld {
 
-//    @PersistenceContext
+    //    @PersistenceContext
     private final EntityManager em;
 
 //    @PersistenceUnit
