@@ -2,6 +2,14 @@ server:
   port: 8088
 
 spring:
+  #freemarker:
+  #  suffix: .html
+
+  #resources:
+  #  static-locations: 'classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, classpath:/public/, classpath:/META-INF/resources/webjars'
+  #  session:
+  #    store-type: redis
+
   datasource:
     url: jdbc:h2:tcp://localhost/~/jpashop
     username: sa
