@@ -4,6 +4,8 @@ import com.jpabook.jpashop.domain.item.Book;
 import com.jpabook.jpashop.domain.item.Item;
 import com.jpabook.jpashop.service.ItemService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

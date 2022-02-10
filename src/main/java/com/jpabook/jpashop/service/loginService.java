@@ -1,4 +1,4 @@
-package com.jpabook.jpashop.security.securityService;
+package com.jpabook.jpashop.service;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

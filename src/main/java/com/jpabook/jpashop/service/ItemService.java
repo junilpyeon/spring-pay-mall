@@ -4,6 +4,8 @@ import com.jpabook.jpashop.domain.item.Book;
 import com.jpabook.jpashop.domain.item.Item;
 import com.jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

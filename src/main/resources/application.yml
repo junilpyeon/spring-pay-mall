@@ -2,13 +2,14 @@ server:
   port: 8088
 
 spring:
-  #freemarker:
-  #  suffix: .html
+  devtools:
+    livereload:
+      enabled: true
+    thymeleaf:
+      cache: false
 
-  #resources:
-  #  static-locations: 'classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, classpath:/public/, classpath:/META-INF/resources/webjars'
-  #  session:
-  #    store-type: redis
+  main:
+    allow-bean-definition-overriding: true
 
   datasource:
     url: jdbc:h2:tcp://localhost/~/jpashop
@@ -25,6 +26,7 @@ spring:
         format_sql: true
         default_batch_fetch_size: 100 # 미리 땡겨올 데이터개수
         #    open-in-view: false # 커넥션 풀을 바로 끊게해줌(영속성 컨텍스트가 @Transcational까지만 유지되게 함)
+
 
 
 logging.level:

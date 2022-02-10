@@ -13,9 +13,10 @@
                 <div class="form-group mx-sm-1 mb-2">
                     <select th:field="*{orderStatus}" class="form-control">
                         <option value="">주문상태</option>
-                        <option th:each="status : ${T(jpabook.jpashop.domain.OrderStatus).values()}"
+                        <!--/*@thymesVar id="jpashop" type=""*/-->
+                        <option th:each="status : ${T(com.jpabook.jpashop.domain.OrderStatus).values()}"
                                 th:value="${status}"
-                                th:text="${status}">option
+                                th:text="${status}">option 
                         </option>
                     </select>
                 </div>
@@ -50,7 +51,12 @@
                        class="btn btn-danger">CANCEL</a>
                 </td>
             </tr>
+            <tr>
+            <a href="#"
+               th:href="'javascript:purchase()'"
+               class="btn btn-info">구매하기</a>
             </tbody>
+            </tr>
         </table>
     </div>
     <div th:replace="fragments/footer :: footer"/>
@@ -63,6 +69,10 @@
         form.setAttribute("action", "/orders/" + id + "/cancel");
         document.body.appendChild(form);
         form.submit();
+    }
+
+    function purchase() {
+
     }
 </script>
 </html>

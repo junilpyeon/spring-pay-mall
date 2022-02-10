@@ -59,6 +59,27 @@ public class InitDb {
             Book book2 = createBook("SPRING2 BOOK", 40000, 300);
             em.persist(book2);
 
+            Book book3 = createBook("SPRING3 BOOK", 20000, 200);
+            em.persist(book3);
+
+            Book book4 = createBook("SPRING4 BOOK", 40000, 300);
+            em.persist(book4);
+
+            Book book5 = createBook("SPRING5 BOOK", 20000, 200);
+            em.persist(book5);
+
+            Book book6 = createBook("SPRING6 BOOK", 40000, 300);
+            em.persist(book6);
+
+            Book book7 = createBook("SPRING7 BOOK", 20000, 200);
+            em.persist(book7);
+
+            Book book8 = createBook("SPRING8 BOOK", 40000, 300);
+            em.persist(book8);
+
+            Book book9 = createBook("SPRING9 BOOK", 40000, 300);
+            em.persist(book9);
+
             OrderItem orderItem1 = OrderItem.createOrderItem(book1,20000,3);
             OrderItem orderItem2 = OrderItem.createOrderItem(book2,40000,4);
 

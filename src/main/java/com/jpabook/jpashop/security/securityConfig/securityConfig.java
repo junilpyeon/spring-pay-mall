@@ -1,5 +1,6 @@
 package com.jpabook.jpashop.security.securityConfig;
 
+import com.jpabook.jpashop.service.loginService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,8 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@Configuration
-@EnableWebSecurity
+//@Configuration
+//@EnableWebSecurity
 public class securityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -50,7 +51,7 @@ public class securityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public LoginService loginService() {
-        return new LoginService();
+    public loginService loginService() {
+        return new loginService();
     }
 }
