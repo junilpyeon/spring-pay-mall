@@ -47,6 +47,10 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	//api 문서웹, http://localhost:8088/swagger-ui.html#/
+	implementation 'io.springfox:springfox-swagger2:2.6.1'
+	implementation 'io.springfox:springfox-swagger-ui:2.6.1'
+
 	//security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.security:spring-security-test'
