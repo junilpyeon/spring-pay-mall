@@ -1,0 +1,14 @@
+## Default Elasticsearch configuration from Elasticsearch base image.
+## https://github.com/elastic/elasticsearch/blob/master/distribution/docker/src/docker/config/elasticsearch.yml
+#
+cluster.name: "docker-cluster"
+#네트워크 접근 호스트 설정 기본은 모두 허용
+network.host: 0.0.0.0
+
+# X-Pack 확장 프로그램에 대한 설정 이 실습에서는 사용 안함
+## X-Pack settings
+## see https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-xpack.html
+#
+#xpack.license.self_generated.type: trial
+#xpack.security.enabled: true
+#xpack.monitoring.collection.enabled: true

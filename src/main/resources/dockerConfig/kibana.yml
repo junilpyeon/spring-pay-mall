@@ -1,0 +1,12 @@
+## Default Kibana configuration from Kibana base image.
+## https://github.com/elastic/kibana/blob/master/src/dev/build/tasks/os_packages/docker_generator/templates/kibana_yml.template.ts
+#로그와 시계열 분석, 애플리케이션 모니터링, 운영 인텔리전스사용 사례에 사용되는 데이터 시각화 및 탐색 도구
+server.name: kibana
+server.host: 0.0.0.0
+elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+monitoring.ui.container.elasticsearch.enabled: true
+
+## X-Pack security credentials
+#
+#elasticsearch.username: elastic
+#elasticsearch.password: changeme

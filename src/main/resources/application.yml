@@ -11,6 +11,21 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+  kafka:
+    bootstrap-servers: 192.168.0.9:9092
+    consumer:
+      bootstrap-servers: 192.168.98.51:9092
+      group-id: foo
+      # auto-offset-reset: earliest
+      # key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      producer:
+        bootstrap-servers: 192.168.98.51:9092
+        # key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        # value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
+
   #swagger 에러 개선
   mvc:
     pathmatch:
