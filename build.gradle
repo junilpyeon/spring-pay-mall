@@ -53,11 +53,19 @@ dependencies {
 
 	//kafka, zookeeper 서버 두대로 설정
 	implementation 'org.springframework.kafka:spring-kafka'
+    //elasticsearch
+	implementation 'org.springframework.data:spring-data-elasticsearch:4.2.2'
 
 	//security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.security:spring-security-test'
 	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'
+
+	//jwt, oauth2
+	implementation 'com.google.code.gson:gson'
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 tasks.named('test') {

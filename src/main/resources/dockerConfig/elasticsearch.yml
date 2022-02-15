@@ -1,6 +1,7 @@
 ## Default Elasticsearch configuration from Elasticsearch base image.
 ## https://github.com/elastic/elasticsearch/blob/master/distribution/docker/src/docker/config/elasticsearch.yml
-#
+#$ docker pull docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+#$ docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.10.0
 cluster.name: "docker-cluster"
 #네트워크 접근 호스트 설정 기본은 모두 허용
 network.host: 0.0.0.0
