@@ -1,3 +1,4 @@
+/*
 package com.jpabook.jpashop.kafka;
 
 public abstract class AbstractElasticsearchConfiguration extends ElasticsearchConfigurationSupport {
@@ -15,3 +16,4 @@ public abstract class AbstractElasticsearchConfiguration extends ElasticsearchCo
         return template;
     }
 }
+*/

@@ -1,6 +1,6 @@
 package com.jpabook.jpashop.service.cache;
 
-import com.rest.api.common.CacheKey;
+import com.jpabook.jpashop.config.CacheKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Caching;

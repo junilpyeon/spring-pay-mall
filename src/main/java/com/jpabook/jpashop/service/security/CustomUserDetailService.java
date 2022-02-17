@@ -1,6 +1,8 @@
 package com.jpabook.jpashop.service.security;
 
 
+import com.jpabook.jpashop.config.CacheKey;
+import com.jpabook.jpashop.exception.CUserNotFoundException;
 import com.jpabook.jpashop.repository.UserJpaRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;

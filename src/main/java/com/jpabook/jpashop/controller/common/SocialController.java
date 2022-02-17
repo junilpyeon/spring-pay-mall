@@ -1,7 +1,7 @@
 package com.jpabook.jpashop.controller.common;
 
 import com.google.gson.Gson;
-import com.rest.api.service.social.KakaoService;
+import com.jpabook.jpashop.service.social.KakaoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;

@@ -1,3 +1,4 @@
+/*
 package com.jpabook.jpashop.kafka;
 
 import org.elasticsearch.client.RestHighLevelClient;
@@ -18,3 +19,4 @@ public class ElasticSearchConfig extends AbstractElasticsearchConfiguration {
         return RestClients.create(clientConfiguration).rest();
     }
 }
+*/

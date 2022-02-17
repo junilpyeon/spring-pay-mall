@@ -1,13 +1,16 @@
 package com.jpabook.jpashop.controller.v1;
 
+import com.jpabook.jpashop.config.security.JwtTokenProvider;
 import com.jpabook.jpashop.domain.member.User;
 import com.jpabook.jpashop.exception.CEmailSigninFailedException;
 import com.jpabook.jpashop.exception.CUserExistException;
+import com.jpabook.jpashop.exception.CUserNotFoundException;
 import com.jpabook.jpashop.model.response.CommonResult;
 import com.jpabook.jpashop.model.response.SingleResult;
 import com.jpabook.jpashop.model.social.KakaoProfile;
 import com.jpabook.jpashop.repository.UserJpaRepo;
 import com.jpabook.jpashop.service.ResponseService;
+import com.jpabook.jpashop.service.social.Auth2Service;
 import com.jpabook.jpashop.service.social.KakaoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

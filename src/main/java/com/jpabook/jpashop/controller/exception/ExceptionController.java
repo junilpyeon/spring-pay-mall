@@ -1,7 +1,7 @@
 package com.jpabook.jpashop.controller.exception;
 
-import com.rest.api.advice.exception.CAuthenticationEntryPointException;
-import com.rest.api.model.response.CommonResult;
+import com.jpabook.jpashop.exception.CAuthenticationEntryPointException;
+import com.jpabook.jpashop.model.response.CommonResult;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.GetMapping;

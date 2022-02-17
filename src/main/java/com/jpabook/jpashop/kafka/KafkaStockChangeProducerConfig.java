@@ -1,3 +1,4 @@
+/*
 package com.jpabook.jpashop.kafka;
 
 import lombok.Value;
@@ -34,3 +35,4 @@ public class KafkaStockChangeProducerConfig {
         return new KafkaTemplate<>(producerFactory());
     }
 }
+*/
