@@ -6,8 +6,11 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.jpabook.jpashop.domain.chatting.ChatRoom;
+import com.jpabook.jpashop.service.ChatRoomService;
+import com.jpabook.jpashop.service.ItemService;
+import com.nimbusds.jose.shaded.json.JSONObject;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -27,14 +30,13 @@ import com.example.demo.domain.Login;
 import com.example.demo.domain.TimeUtils;
 
 @Controller
+@RequiredArgsConstructor
 public class ChatApplicationController {
-
 
     @Autowired
     private SimpMessagingTemplate simpMessage;
 
-    @Autowired
-    private ChatRoomService chatRoomService;
+    private final ChatRoomService chatRoomService;
 
     //채팅으로 거래하기(productInfo 화면)
     @RequestMapping(value="/chatMessage", method=RequestMethod.GET)

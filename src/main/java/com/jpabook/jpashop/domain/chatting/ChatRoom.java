@@ -3,11 +3,23 @@ package com.jpabook.jpashop.domain.chatting;
 import java.sql.Timestamp;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
 
 
-public @Data class ChatRoom {
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "dtype")
+@Getter
+@Setter
+public class ChatRoom {
 
-    private int id;
+    @Id
+    @GeneratedValue
+    @Column(name = "chatroom_id")
+    private Long id;
     private int pr_id;
     private String sellerId;
     private String buyerId;
@@ -21,7 +33,7 @@ public @Data class ChatRoom {
     private String senderName;
     private String pr_title;
 
-    public ChatRoom(int id, int pr_id, String sellerId, String buyerId, String fileName,
+    public ChatRoom(Long id, int pr_id, String sellerId, String buyerId, String fileName,
                     Timestamp createdDate, String sellerName, String buyerName) {
         super();
         this.id = id;
